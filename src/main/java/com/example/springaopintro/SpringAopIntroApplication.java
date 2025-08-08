@@ -16,3 +16,8 @@ public class SpringAopIntroApplication {
 		userService.registerUser("kleber.vales");
 	}
 }
+/*
+   - Criar uma classe que simula o processo de registro de um usuário (lógica de negócio)
+   - Criar uma classe que aplica preocupações transversais como logging e medição de tempo usando Spring AOP
+ */
+
