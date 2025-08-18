@@ -1,7 +1,5 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.5.4"
-	id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "com.example"
@@ -18,11 +16,16 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-aop")
-	implementation("org.aspectj:aspectjrt:1.9.20")
-	implementation("org.aspectj:aspectjweaver:1.9.20") // Add this line
-	implementation("org.springframework.boot:spring-boot-starter")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	// Dependência principal do Spring Core/Context
+	implementation("org.springframework:spring-context:6.1.14")
+
+	// Suporte a AOP
+	implementation("org.springframework:spring-aop:6.1.14")
+	implementation("org.aspectj:aspectjweaver:1.9.22")
+
+	// Testes (sem Boot, usamos JUnit 5 direto + Spring Test)
+	testImplementation("org.springframework:spring-test:6.1.14")
+	testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
 }
 
 tasks.withType<Test> {

@@ -23,10 +23,12 @@ public class LoggingAspect {
 
     @Around("serviceMethods()")
     public Object aroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
+
         long start = System.currentTimeMillis();
         Object result = pjp.proceed(); // executa o método original
         long end = System.currentTimeMillis();
         System.out.println("⏱️ [AROUND] Tempo de execução: " + (end - start) + "ms");
         return result;
+
     }
 }
